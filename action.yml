@@ -1,0 +1,67 @@
+name: 'River profile card'
+description: 'Your last 12 months on GitHub drawn as a river (Wisła, Rhein, Loire, Thames, Po, Vltava, Mississippi, Nile) in a status-page card.'
+author: 'amrozu'
+branding:
+  icon: 'activity'
+  color: 'blue'
+
+inputs:
+  github_user:
+    description: 'GitHub login whose contributions are drawn'
+    default: ${{ github.repository_owner }}
+  river:
+    description: 'wisla, rhein, loire, thames, po, vltava, mississippi or nile'
+    default: 'wisla'
+  name:
+    description: 'Full name shown in the header'
+    required: true
+  role:
+    description: 'Role shown in the first tile'
+    default: 'Developer'
+  company:
+    description: 'Company shown under the role (optional)'
+    default: ''
+  city:
+    description: 'City shown in the header; marked on the map when it is a known city there'
+    default: ''
+  output_dir:
+    description: 'Directory for river-light.svg and river-dark.svg'
+    default: 'river-card'
+  commit:
+    description: 'Commit and push the SVGs when they change'
+    default: 'true'
+  token:
+    description: 'Token used for the GitHub API (account creation date)'
+    default: ${{ github.token }}
+
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 24
+    - name: Render card
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.token }}
+        WC_USER: ${{ inputs.github_user }}
+        WC_RIVER: ${{ inputs.river }}
+        WC_NAME: ${{ inputs.name }}
+        WC_ROLE: ${{ inputs.role }}
+        WC_COMPANY: ${{ inputs.company }}
+        WC_CITY: ${{ inputs.city }}
+        WC_OUT: ${{ inputs.output_dir }}
+      run: |
+        node "$GITHUB_ACTION_PATH/src/cli.ts" --user "$WC_USER" --name "$WC_NAME" --role "$WC_ROLE" --river "$WC_RIVER" \
+          --company "$WC_COMPANY" --city "$WC_CITY" --out "$WC_OUT"
+    - name: Commit card
+      if: ${{ inputs.commit == 'true' }}
+      shell: bash
+      env:
+        WC_OUT: ${{ inputs.output_dir }}
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add "$WC_OUT"
+        git diff --cached --quiet || git commit -m "chore: update river card"
+        git push

@@ -1,0 +1,24 @@
+name: Test
+# Renders a card from live data, so a change in GitHub's calendar markup is caught early.
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        river: [wisla, rhein, loire, thames, po, vltava, mississippi, nile]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node src/cli.ts --user "${{ github.repository_owner }}" --name "Test User" --role "Developer" --city "Warszawa" --river "${{ matrix.river }}" --out out
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - run: test -s out/river-light.svg && test -s out/river-dark.svg
