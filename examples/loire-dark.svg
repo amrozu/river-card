@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="808" viewBox="0 0 900 808" role="img" aria-labelledby="t d">
-<title id="t">Łukasz Amroz — Tech Lead at Property Group</title>
+<title id="t">Łukasz Amróz — Tech Lead at Property Group</title>
 <desc id="d">Status page: 1,560 contributions in the last 12 months, peak week Oct 4–10 with 315, 43 active days of the last 90.</desc>
 <style>
 text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;fill:#e6edf3}
@@ -58,7 +58,7 @@ text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Hel
 @keyframes w-pulse{0%{opacity:.7;transform:scale(1)}80%,100%{opacity:0;transform:scale(3.4)}}
 
 @media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
-<defs><linearGradient id="area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#58a6ff" stop-opacity="0.32"/><stop offset="1" stop-color="#58a6ff" stop-opacity="0"/></linearGradient></defs><g class="in" style="animation-delay:0s"><rect class="panel" x="0.5" y="0.5" width="899" height="55" rx="6"/><circle class="pulse" cx="27" cy="28" r="5" fill="#3fb950"/><circle cx="27" cy="28" r="5" fill="#3fb950"/><text x="44" y="33.5"><tspan class="name">Łukasz Amroz</tspan><tspan class="sub" dx="10">·</tspan><tspan class="head" dx="10">All systems operational</tspan></text><text class="sub" x="878" y="33" text-anchor="end">Warszawa · updated 31 Oct 2026</text></g>
+<defs><linearGradient id="area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#58a6ff" stop-opacity="0.32"/><stop offset="1" stop-color="#58a6ff" stop-opacity="0"/></linearGradient></defs><g class="in" style="animation-delay:0s"><rect class="panel" x="0.5" y="0.5" width="899" height="55" rx="6"/><circle class="pulse" cx="27" cy="28" r="5" fill="#3fb950"/><circle cx="27" cy="28" r="5" fill="#3fb950"/><text x="44" y="33.5"><tspan class="name">Łukasz Amróz</tspan><tspan class="sub" dx="10">·</tspan><tspan class="head" dx="10">All systems operational</tspan></text><text class="sub" x="878" y="33" text-anchor="end">Warszawa · updated 31 Oct 2026</text></g>
 <g class="in" style="animation-delay:0.12s"><rect class="panel" x="0.5" y="72.5" width="212" height="99" rx="6"/><text class="lbl" x="20" y="102">ROLE</text><text class="val" x="20" y="138">Tech Lead</text><text class="sub" x="20" y="158">Property Group</text></g>
 <g class="in" style="animation-delay:0.2s"><rect class="panel" x="229.5" y="72.5" width="212" height="99" rx="6"/><text class="lbl" x="249" y="102">UPTIME</text><text class="val" x="249" y="138">10y 9m</text><text class="sub" x="249" y="158">on GitHub since 2016</text></g>
 <g class="in" style="animation-delay:0.28s"><rect class="panel" x="458.5" y="72.5" width="212" height="99" rx="6"/><text class="lbl" x="478" y="102">CONTRIBUTIONS · 12 MO</text><text class="val" x="478" y="138">1,560</text><text class="sub" x="478" y="158">827 in the last 30 days</text></g>

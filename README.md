@@ -91,4 +91,4 @@ node src/cli.ts --user <login> --name "Your Name" --role "Developer" --river rhe
 
 ## Credits
 
-Map data: [Natural Earth](https://www.naturalearthdata.com/) (public domain). Code: MIT © Łukasz Amroz.
+Map data: [Natural Earth](https://www.naturalearthdata.com/) (public domain). Code: MIT © Łukasz Amróz.
